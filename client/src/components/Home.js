@@ -3,6 +3,7 @@ import React from 'react';
 
 import './Home.css';
 import { Button, Table} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 
 const Home = () => {
@@ -10,7 +11,9 @@ const Home = () => {
         <div className='mt-5'>
             <div className='container'>
                 <div className='add_btn mt-2'>
-                     <Button variant="primary" ><i class="fas fa-plus" />Add Product</Button>
+                    <Link to='/addProduct'>
+                      <Button variant="success" ><i class="fas fa-plus" />Add Product</Button>
+                    </Link>
                 </div>
                 
                 <Table striped bordered hover className='mt-5'>
@@ -30,7 +33,7 @@ const Home = () => {
                         <td>Otto</td>
                         <td>@mdo</td>
                         <td className='d-flex justify-content-between'>
-                            <Button variant='primary'><i class="fas fa-eye"></i></Button>
+                            <Button variant='success'><i class="fas fa-eye"></i></Button>
                             <Button variant='warning'><i class="fas fa-edit"></i></Button>
                             <Button variant='danger'><i class="fas fa-trash-alt"></i></Button>
                             
