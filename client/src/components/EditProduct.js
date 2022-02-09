@@ -1,9 +1,10 @@
 import React from 'react';
 
+import { Button } from 'react-bootstrap';
 import './AddProduct.css';
-import {Form} from 'react-bootstrap';
 
-const AddProduct = () => {
+
+const EditProduct = () => {
 
     const [inputValue, setInputValue] = React.useState({
 
@@ -28,8 +29,8 @@ const AddProduct = () => {
             <div className="form-holder">
                 <div className="form-content">
                     <div className="form-items">
-                        <h3>Register Today</h3>
-                        <p>Fill in the data below.</p>
+                        <h3>Edit Member Details</h3>
+                        <p>Edit in the data below.</p>
                         <form className="requires-validation" novalidate>
 
                             <div className="col-md-12">
@@ -58,7 +59,7 @@ const AddProduct = () => {
                         
 
                             <div className="form-button mt-3">
-                                <button id="submit" type="submit" className="btn btn-primary">Register</button>
+                                <Button id="submit" type="submit" variant="success">Register</Button>
                             </div>
                         </form>
                     </div>
@@ -70,4 +71,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default EditProduct;

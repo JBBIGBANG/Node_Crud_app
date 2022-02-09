@@ -12,7 +12,7 @@ const Home = () => {
             <div className='container'>
                 <div className='add_btn mt-2'>
                     <Link to='/addProduct'>
-                      <Button variant="success" ><i class="fas fa-plus" />Add Product</Button>
+                      <Button variant="success" ><i class="fas fa-plus" />Add Member</Button>
                     </Link>
                 </div>
                 
@@ -20,9 +20,9 @@ const Home = () => {
                     <thead>
                         <tr className='table-dark'>
                         <th>Serial</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Name</th>
                         <th>Username</th>
+                        <th>E-mail</th>
                         <th>Action</th>
                         </tr>
                     </thead>
@@ -30,8 +30,8 @@ const Home = () => {
                         <tr>
                         <td>1</td>
                         <td>Mark</td>
-                        <td>Otto</td>
                         <td>@mdo</td>
+                        <td>mark@gmail.com</td>
                         <td className='d-flex justify-content-between'>
                             <Button variant='success'><i class="fas fa-eye"></i></Button>
                             <Button variant='warning'><i class="fas fa-edit"></i></Button>
