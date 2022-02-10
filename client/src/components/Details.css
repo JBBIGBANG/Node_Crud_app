@@ -1,0 +1,25 @@
+.left_view h3{
+    font-size: 21px;
+}
+
+.left_view h3 span{
+    font-weight: 400;
+}
+
+.left_view p{
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.right_view h3{
+    font-size: 21px;
+}
+
+.right_view h3 span{
+    font-weight: 400;
+}
+
+.right_view p{
+    font-weight: 600;
+    line-height: 1.5;
+}

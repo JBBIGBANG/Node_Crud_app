@@ -4,10 +4,12 @@ import React from 'react';
 import './Home.css';
 import { Button, Table} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
 const Home = () => {
     return (
+        <div className = 'main_div' >      
         <div className='mt-5'>
             <div className='container'>
                 <div className='add_btn mt-2'>
@@ -33,9 +35,9 @@ const Home = () => {
                         <td>@mdo</td>
                         <td>mark@gmail.com</td>
                         <td className='d-flex justify-content-between'>
-                            <Button variant='success'><i class="fas fa-eye"></i></Button>
-                            <Button variant='warning'><i class="fas fa-edit"></i></Button>
-                            <Button variant='danger'><i class="fas fa-trash-alt"></i></Button>
+                            <Button variant='success'>< VisibilityIcon /></Button>
+                            <Button variant='warning'><EditIcon /></Button>
+                            <Button variant='danger'><DeleteIcon /></Button>
                             
                         </td>
                         </tr>
@@ -46,6 +48,7 @@ const Home = () => {
 
             </div>
         </div>
+    </div>  
     );
 };
 export default Home;
