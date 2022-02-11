@@ -9,8 +9,10 @@ const AddProduct = () => {
 
         name: '',
         username: '',
+        mobile: '',
         email: '',
-        password: ''
+        password: '',
+        description: ''
         
     });
 
@@ -45,6 +47,12 @@ const AddProduct = () => {
                             </div>
 
                             <div className="col-md-12">
+                                <input className="form-control" type="text" name="mobile" value={inputValue.mobile} onChange={setData} placeholder="Mobile" required />
+                                 <div className="valid-feedback">Mobile field is valid!</div>
+                                 <div className="invalid-feedback">Mobile field cannot be blank!</div>
+                            </div>
+
+                            <div className="col-md-12">
                                 <input className="form-control" type="email" name="email" value={inputValue.email} onChange={setData} placeholder="E-mail Address" required />
                                  <div className="valid-feedback">Email field is valid!</div>
                                  <div className="invalid-feedback">Email field cannot be blank!</div>
@@ -54,6 +62,11 @@ const AddProduct = () => {
                                 <input className="form-control" type="password" name="password" value={inputValue.password} onChange={setData} placeholder="Password" required />
                                  <div className="valid-feedback">Password field is valid!</div>
                                  <div className="invalid-feedback">Password field cannot be blank!</div>
+                            </div>
+                            <div className="col-md-12">
+                                <input className="form-control" type="text" name="description" value={inputValue.description} onChange={setData} placeholder="Password" required />
+                                 <div className="valid-feedback">Description field is valid!</div>
+                                 <div className="invalid-feedback">Description field cannot be blank!</div>
                             </div>
                         
 
