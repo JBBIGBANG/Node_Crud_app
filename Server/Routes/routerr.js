@@ -61,4 +61,16 @@ router.get('/getdata',async(req, res) => {
 
 });
 
+router.get('/finduser/:id', async(req,res) => {
+    try {
+        const {id} = req.params;
+        const individualuser = await users.findById({_id: id});
+        console.log(individualuser);
+        res.status(200).json(individualuser);
+    } catch (error) {
+        res.status(404).json(error);
+        console.log(error);
+    }
+});
+
 module.exports = router;

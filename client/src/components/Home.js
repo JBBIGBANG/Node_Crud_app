@@ -25,7 +25,7 @@ const Home = () => {
 
         if(res.status === 200) {
             setuserdata(data);
-            alert('Get Sucessfully');
+            res.status(200).json(data);
         } else {
             alert('Did not get any data');
         }
@@ -66,14 +66,14 @@ const Home = () => {
                                 
                                
                                     <tr key={id}>
-                                        <td>{id}</td>
+                                        <td>{id + 1}</td>
                                         <td>{ item.name}</td>
                                         <td>{ item.username}</td>
                                         <td>{item.mobile}</td>
                                         <td>{item.email}</td>
                                         <td>{item.description}</td>
                                         <td className='d-flex justify-content-between'>
-                                            <Button variant='success'>< VisibilityIcon /></Button>
+                                            <Link to={`details/${item._id}`}><Button variant='success'>< VisibilityIcon /></Button></Link>
                                             <Button variant='warning'><EditIcon /></Button>
                                             <Button variant='danger'><DeleteIcon /></Button>
                                             

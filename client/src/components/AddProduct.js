@@ -36,7 +36,8 @@ const AddProduct = () => {
         console.log(data);
 
         if(res.status === 200) {
-            alert('User added successfully');
+            res.status(200).json(data);
+            alert('Data added successfully');
         } else {
             alert('User already exists');
         }
