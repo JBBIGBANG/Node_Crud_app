@@ -24,6 +24,24 @@ const AddProduct = () => {
         });
     };
 
+    const addinputdata = async (event) => {
+        const res = await fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(inputValue)
+        });
+        const data = await res.json();
+        console.log(data);
+
+        if(res.status === 200) {
+            alert('User added successfully');
+        } else {
+            alert('User already exists');
+        }
+    };
+
     return(
         <div className="form-body">
         <div className="row">
@@ -64,14 +82,14 @@ const AddProduct = () => {
                                  <div className="invalid-feedback">Password field cannot be blank!</div>
                             </div>
                             <div className="col-md-12">
-                                <input className="form-control" type="text" name="description" value={inputValue.description} onChange={setData} placeholder="Password" required />
+                                <input className="form-control" type="text" name="description" value={inputValue.description} onChange={setData} placeholder="Description" required />
                                  <div className="valid-feedback">Description field is valid!</div>
                                  <div className="invalid-feedback">Description field cannot be blank!</div>
                             </div>
                         
 
                             <div className="form-button mt-3">
-                                <button id="submit" type="submit" className="btn btn-primary">Register</button>
+                                <button id="submit" type="submit" className="btn btn-primary" onClick={addinputdata} >Submit</button>
                             </div>
                         </form>
                     </div>

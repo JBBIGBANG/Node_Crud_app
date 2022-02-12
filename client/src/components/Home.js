@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 import './Home.css';
@@ -8,6 +8,33 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 const Home = () => {
+
+    const [getuserdata, setuserdata] = React.useState([]);
+    console.log(getuserdata);
+
+    const getinputdata = async (event) => {
+        const res = await fetch('/getdata', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            
+        });
+        const data = await res.json();
+        console.log(data);
+
+        if(res.status === 200) {
+            setuserdata(data);
+            alert('Get Sucessfully');
+        } else {
+            alert('Did not get any data');
+        }
+    };
+
+    useEffect(() => {
+        getinputdata();
+    } , []);
+
     return (
         <div className = 'main_div' >      
         <div className='mt-5'>
@@ -24,26 +51,44 @@ const Home = () => {
                         <th>Serial</th>
                         <th>Name</th>
                         <th>Username</th>
+                        <th>Mobile</th>
                         <th>E-mail</th>
+                        <th>Description</th>
                         <th>Action</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
-                        <tr>
-                        <td>1</td>
-                        <td>Mark</td>
-                        <td>@mdo</td>
-                        <td>mark@gmail.com</td>
-                        <td className='d-flex justify-content-between'>
-                            <Button variant='success'>< VisibilityIcon /></Button>
-                            <Button variant='warning'><EditIcon /></Button>
-                            <Button variant='danger'><DeleteIcon /></Button>
+                    
+                        { getuserdata.map((item, id) => {
                             
-                        </td>
-                        </tr>
+                            return (
+                                
+                               
+                                    <tr key={id}>
+                                        <td>{id}</td>
+                                        <td>{ item.name}</td>
+                                        <td>{ item.username}</td>
+                                        <td>{item.mobile}</td>
+                                        <td>{item.email}</td>
+                                        <td>{item.description}</td>
+                                        <td className='d-flex justify-content-between'>
+                                            <Button variant='success'>< VisibilityIcon /></Button>
+                                            <Button variant='warning'><EditIcon /></Button>
+                                            <Button variant='danger'><DeleteIcon /></Button>
+                                            
+                                        </td>
+                                    </tr>
+                                
+                            );
+                        })}
+
+                     
                         
                         
                     </tbody>
+
+                   
                     </Table>
 
             </div>
