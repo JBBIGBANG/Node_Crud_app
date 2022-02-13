@@ -1,29 +1,34 @@
 import React from 'react';
-import {Navbar, Nav, Link, Container, NavDropdown, Form, Button, FormControl} from 'react-bootstrap';
+import {Navbar, Nav, Container, NavDropdown, Form, Button, FormControl,NavLink} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
+
+
 
 const Navigation = () => {
     return (
         <div>
             <Navbar bg="dark" expand="lg"  variant="dark">
             <Container fluid>
-    
-                   <Navbar.Brand href="#home">
-                            <img
-                            alt=""
-                            src="https://user-images.githubusercontent.com/42708686/121468850-160d7900-c9d9-11eb-9cc2-b3db7bb52df3.png"
-                            width="30"
-                            height="30"
-                            className="d-inline-block align-top"
-                            />{' '}
-                        CRUD APP
-                    </Navbar.Brand>
+                
+                    <Navbar.Brand as={Link} to="/">
+                                <img
+                                alt=""
+                                src="https://user-images.githubusercontent.com/42708686/121468850-160d7900-c9d9-11eb-9cc2-b3db7bb52df3.png"
+                                width="30"
+                                height="30"
+                                className="d-inline-block align-top"
+                                />{' '}
+                            CRUD APP
+                        </Navbar.Brand>
+                
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll">
                     <Nav
                         className="me-auto my-2 my-lg-0"
                         style={{ maxHeight: '100px' }}
                         navbarScroll>
-                        <Nav.Link href="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
                     
                     </Nav>
                     <Form className="d-flex">

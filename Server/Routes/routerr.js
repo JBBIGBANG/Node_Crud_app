@@ -73,4 +73,21 @@ router.get('/finduser/:id', async(req,res) => {
     }
 });
 
+//update
+
+router.patch('/updateuser/:id', async(req,res) => {
+
+    try {
+        const {id} = req.params;
+
+        const updateuser = await users.findByIdAndUpdate(id,req.body,{
+            new:true
+        });
+        console.log(updateuser);
+        res.status(200).json(updateuser);
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
+
 module.exports = router;

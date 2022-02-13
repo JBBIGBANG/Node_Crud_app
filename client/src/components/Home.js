@@ -53,7 +53,7 @@ const Home = () => {
                         <th>Username</th>
                         <th>Mobile</th>
                         <th>E-mail</th>
-                        <th>Description</th>
+                        
                         <th>Action</th>
                         </tr>
                     </thead>
@@ -71,12 +71,11 @@ const Home = () => {
                                         <td>{ item.username}</td>
                                         <td>{item.mobile}</td>
                                         <td>{item.email}</td>
-                                        <td>{item.description}</td>
+                                        
                                         <td className='d-flex justify-content-between'>
                                             <Link to={`details/${item._id}`}><Button variant='success'>< VisibilityIcon /></Button></Link>
-                                            <Button variant='warning'><EditIcon /></Button>
-                                            <Button variant='danger'><DeleteIcon /></Button>
-                                            
+                                            <Link to={`editProduct/${item._id}`}><Button variant='warning'><EditIcon /></Button></Link>
+                                            <Link to={`deleteProduct/${item._id}`} > <Button variant='danger'><DeleteIcon /></Button></Link>                                          
                                         </td>
                                     </tr>
                                 
