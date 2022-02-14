@@ -2,9 +2,11 @@ import React from 'react';
 
 import './AddProduct.css';
 import {Form} from 'react-bootstrap';
+import {useNavigate} from 'react-router-dom';
 
 const AddProduct = () => {
 
+    const history = useNavigate();
     const [inputValue, setInputValue] = React.useState({
 
         name: '',
@@ -37,9 +39,12 @@ const AddProduct = () => {
 
         if(res.status === 200) {
             res.status(200).json(data);
-            alert('Data added successfully');
+            console.log('added');
+            // alert('Data added successfully');
+            history.push('/');
+            
         } else {
-            alert('User already exists');
+            alert('Error');
         }
     };
 

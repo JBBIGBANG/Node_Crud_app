@@ -35,6 +35,24 @@ const Home = () => {
         getinputdata();
     } , []);
 
+    const deleteUser = async (id) => {
+        const result = await fetch(`/deleteuser/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        });
+        const data = await result.json();
+        console.log(data);
+        if(result.status === 200) {
+            console.log('deleted');
+            getinputdata();
+        }
+        else {
+            alert('Error');
+        }
+    };
+
     return (
         <div className = 'main_div' >      
         <div className='mt-5'>
@@ -75,7 +93,7 @@ const Home = () => {
                                         <td className='d-flex justify-content-between'>
                                             <Link to={`details/${item._id}`}><Button variant='success'>< VisibilityIcon /></Button></Link>
                                             <Link to={`editProduct/${item._id}`}><Button variant='warning'><EditIcon /></Button></Link>
-                                            <Link to={`deleteProduct/${item._id}`} > <Button variant='danger'><DeleteIcon /></Button></Link>                                          
+                                            <Button variant='danger' onClick={()=>deleteUser(item._id)}><DeleteIcon /></Button>                                        
                                         </td>
                                     </tr>
                                 
