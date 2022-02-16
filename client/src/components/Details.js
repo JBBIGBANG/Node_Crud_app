@@ -77,7 +77,7 @@ const Details = () => {
                             <h3 className='mt-3'>Name: <span style={{ fontWeight: 400  }} >{getuserdata.name}</span></h3>
                             <h3 className='mt-3'>Username: <span style={{ fontWeight: 400  }} >{getuserdata.username}</span></h3>
                             <p className='mt-3'><EmailIcon />Email: <span style={{ fontWeight: 400  }}>{getuserdata.email}</span></p>
-                            <p className='mt-3'>Occupation: <span style={{ fontWeight: 400  }}>Software Developer</span></p>
+                            <p className='mt-3'><WorkIcon />Occupation: <span style={{ fontWeight: 400  }}>Software Developer</span></p>
                         </div>
                         
 
