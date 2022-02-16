@@ -43,7 +43,7 @@ router.post('/register', async(req, res) => {
             };
 
         } catch (error) {
-            res.status(404).send({
+            res.status(400).send({
                 message: error.message
             });
         }

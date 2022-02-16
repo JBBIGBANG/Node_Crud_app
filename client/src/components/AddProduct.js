@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom';
 
 const AddProduct = () => {
 
-    const history = useNavigate();
+    const navigator = useNavigate();
     const [inputValue, setInputValue] = React.useState({
 
         name: '',
@@ -27,6 +27,8 @@ const AddProduct = () => {
     };
 
     const addinputdata = async (event) => {
+        event.preventDefault();
+        
         const res = await fetch('/register', {
             method: 'POST',
             headers: {
@@ -35,13 +37,13 @@ const AddProduct = () => {
             body: JSON.stringify(inputValue)
         });
         const data = await res.json();
-        console.log(data);
+        console.log({data,res});
 
         if(res.status === 200) {
-            res.status(200).json(data);
+            // res.status(200).json(data);
             console.log('added');
             // alert('Data added successfully');
-            history.push('/');
+            navigator('/');
             
         } else {
             alert('Error');
